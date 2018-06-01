@@ -12,11 +12,20 @@
 
 #include "includes/ft_printf.h"
 
+int		parse_first_time(char *format, args)
+{
+
+
+}
+
 int		ft_printf(const char *format, ...)
 {
-	va_list ap;
-	
-	va_start(ap, format);
-	var_arg
+	va_list args;
+	int 	ret;
+
+	va_start(args, format);
+	ret = parse_first_time(format, args);
+	va_end(args);
+	return (ret);	
 }
 
