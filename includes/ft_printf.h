@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 14:51:08 by atastet           #+#    #+#             */
-/*   Updated: 2018/06/04 16:10:43 by atastet          ###   ########.fr       */
+/*   Updated: 2018/06/04 19:30:52 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 
 typedef struct		s_lst
 {
-	char			type;
+	//MAYBE I SHOULD INITIALIZE type 
+	int				type;
 	int				plus;
 	int				minus;
 	int				zero;
@@ -38,12 +39,13 @@ typedef struct		s_lst
 	int				j;
 	int				prec;
 	int				champ;
-	int				len;
 	int				pourc;
+	int				len;
 	struct s_lst	*next;
 }					t_lst;
 
 int		ft_printf(const char *format, ...);
 int		save_flags(const char *format, int i, t_lst *tmp);
+int		save_type(const char * format, int i, t_lst *tmp);
 
 #endif

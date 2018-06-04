@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:35:21 by atastet           #+#    #+#             */
-/*   Updated: 2018/06/04 16:10:41 by atastet          ###   ########.fr       */
+/*   Updated: 2018/06/04 19:13:44 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int		main()
 	unsigned oct;
 	int error;
 	char buf[10] = "12345679\0";
-	
+	int j;
+
+	j  = 42;
 	oct = 1250;
 	i = 0;
 	neg = -5200;
@@ -62,6 +64,7 @@ int		main()
 	printf(">>>>>>>>>>>.10 [%s]\n", buf);
 	printf(".30 really  [%.30s]\n", buf);
 	printf(".3 really  [%.3s]\n", buf);
+	printf("10   [%10!]\n", buf);
 	printf(".10 really on d  [%0.30d]\n", pos);
 	printf(".10 after s [%s.10]\n", buf);
 	//TEST FLAGS h hh ll l j z
@@ -72,6 +75,9 @@ int		main()
 	printf(" Testing prio >>[%-10.10d]\n", neg);
 	printf("Default  with 0 >>[%+-d]\n", neg);
 	printf("- with neg >>[%.2d]\n", neg);
-	printf("pourcentage %%%+bd`\n", neg);
+	printf("pourcentage %+101-------%bd djdjdj`\n", neg, pos);
+	///LAST TEST 
+	printf("LAST TEST\n");
+	printf("%dd", j);
 	return (0);
 }

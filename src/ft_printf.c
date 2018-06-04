@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 14:49:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/06/04 14:55:22 by atastet          ###   ########.fr       */
+/*   Updated: 2018/06/04 19:35:06 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ static int		parse(const char *format, va_list args)
 	while (format[i])
 	{
 		if (format[i] == '%')
+		{
 			i = save_flags(format, i, tmp);
+			i = save_type(format, i, tmp);
+		}
 		i++;
 	}
 	///LATER IT SHOULD RETURN THE NUMBER OF C PRINT
@@ -34,7 +37,7 @@ static int		parse(const char *format, va_list args)
 int				ft_printf(const char *format, ...)
 {
 	va_list args;
-	int 	ret;
+	int		ret;
 
 	va_start(args, format);
 	ret = parse(format, args);
