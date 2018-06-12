@@ -37,6 +37,8 @@ static t_lst			*parse_flags(const char *format)
 	return (lst);
 }
 
+//JUST TESTING FLAGS
+
 static void	test_flags(t_lst *flags)
 {
 	int i;
