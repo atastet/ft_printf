@@ -51,6 +51,7 @@ static void	test_flags(t_lst *flags)
 		tmp = tmp->next;
 	}
 }
+
 int				ft_printf(const char *format, ...)
 {
 	va_list args;
@@ -64,4 +65,4 @@ int				ft_printf(const char *format, ...)
 	printf("END OF PRINTF");
 	///LATER IT SHOULD RETURN THE NUMBER OF C PRINT
 	return (0);
-m
+}
