@@ -49,6 +49,7 @@ typedef struct		s_lst
 int		ft_printf(const char *format, ...);
 int		save_flags(const char *format, int i, t_lst *tmp);
 int		save_type(const char * format, int i, t_lst *tmp);
-t_lst		*create_lst(void);
+t_lst		*create_first();
+void		create_lst(t_lst *tmp);
 
 #endif

@@ -4,9 +4,11 @@ int	main()
 {
 	int i;
 	int j;
-
+	char c;
+	
+	c = 'a';
 	i = 10;
 	j = 5;
-	ft_printf("Hello %-0d %0i \n", i, j);
+	ft_printf("Hello %0-d %0i hello %-hhD %% %+#hhc \n", i, j, i, c);
 	return(0);
 }

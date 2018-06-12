@@ -12,43 +12,56 @@
 
 #include "../includes/ft_printf.h"
 
-static int		parse(const char *format, va_list args)
+static t_lst			*parse_flags(const char *format)
 {
 	int		i;
 	t_lst	*lst;
 	t_lst	*tmp;
-	t_lst	*new;
 
-	lst = create_lst();
+	lst = create_first();
 	tmp = lst;
 	i = 0;
 	while (format[i])
 	{
-		printf("%s\n", format);
 		if (format[i] == '%')
 		{
 			i = save_flags(format, i, tmp);
 			i = save_type(format, i, tmp);
+			create_lst(tmp);
+			tmp = tmp->next;
 		}
-		printf("type = %d, minus = %d, zero = %d\n", tmp->type, tmp->minus, tmp->zero);
-		new = create_lst();
-		tmp->next = new;
-		tmp = tmp->next;
-		free(new);
 		i++;
+		//FREE TMP
 	}
-	///LATER IT SHOULD RETURN THE NUMBER OF C PRINT
-	return (0);
+	free(tmp->next);
+	return (lst);
 }
 
+static void	test_flags(t_lst *flags)
+{
+	int i;
+	i = 0;
+	t_lst	*tmp;
+	
+	tmp = flags;
+	while (tmp->next)
+	{
+		printf("LST %d >> type = %d, plus %d, hash %d, minus = %d, zero = %d, h =%d,  hh = %d, %% = %d\n",i, tmp->type, tmp->plus, tmp->hash, tmp->minus, tmp->zero, tmp->h, tmp->hh, tmp->pourc);
+		i++;
+		tmp = tmp->next;
+	}
+}
 int				ft_printf(const char *format, ...)
 {
 	va_list args;
-	int		ret;
+	t_lst		*flags;
 
 	va_start(args, format);
-	ret = parse(format, args);
+	flags = parse_flags(format);
+	test_flags(flags);
 	va_end(args);
+	printf("%s\n", format);
 	printf("END OF PRINTF");
-	return (ret);
-}
+	///LATER IT SHOULD RETURN THE NUMBER OF C PRINT
+	return (0);
+m

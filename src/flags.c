@@ -54,9 +54,9 @@ static void		second_flags(const char *format, int i, t_lst *tmp)
 			tmp->z = 1;
 		else if (format[i] == 'j')
 			tmp->l = 1;
-		else if (format[i] == 'l')
+		else if (format[i] == 'l' && format[i - 1] != 'l')
 			tmp->l = 1;
-		else if (format[i] == 'h')
+		else if (format[i] == 'h' && format[i - 1] != 'h')
 			tmp->h = 1;
 	}
 	return ;
