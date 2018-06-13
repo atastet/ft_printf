@@ -32,7 +32,7 @@ int		main()
 	printf("Hello %0+#-s\n", buf);
 	//TEST FLAGS - + space # 0
 	printf(">>>>>>>>>TEST FLAGS - + space # 0\n");
-	printf("Hello >>[%d]\n", i);
+	printf("Hello >>[% d]\n", i);
 	printf("NEG classic >>[%d]\n", neg);
 	printf("Double pourcentage >>[%%%d]\n", i);
 	printf("+ with 0 >>[%+d]\n", i);
