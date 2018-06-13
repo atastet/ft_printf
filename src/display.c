@@ -1,10 +1,40 @@
 #include "../includes/ft_printf.h"
 
-static	int	display_var(t_lst *tmp, va_list args, char *buff, int j)
+static int		flags_s(t_lst *tmp, va_list args, char *buff, int j)
 {
+	char	*str;
+	int		i;
+
+	//DELETE IT
+	tmp->type = 1;
+	i = 0;
+	str = va_arg(args, char *);
+	while (str[i])
+	{
+		buff[j] = str[i];
+		i++;
+		j++;
+	}
+	return (j);
+}
+
+static int		flags_i(t_lst *tmp, va_list args, char *buff, int j)
+{
+	int i;
+
+	tmp->type = 4;
+	
+}
+
+static	int		display_var(t_lst *tmp, va_list args, char *buff, int j)
+{
+	
 	// ex : va_arg(args, int); DELETE IT
-	(void)args;
-	if (tmp->type != 0)
+	if (tmp->type == 1)
+		j = flags_s(tmp, args, buff, j);
+	else if (tmp->type == 4)
+		j = flags_i(tmp, args, buff, j);
+	else if (tmp->type != 0)
 		buff[j] = '$';
 	else if (tmp->pourc == 1)
 		buff[j] = '%';

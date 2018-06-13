@@ -19,7 +19,7 @@ int		main()
 	int pos;
 	unsigned oct;
 	int error;
-	char buf[10] = "12345679\0";
+	char buf[18] = "[Anthony TASTET]";
 	int j;
 
 	j  = 42;
@@ -27,6 +27,9 @@ int		main()
 	i = 0;
 	neg = -5200;
 	pos = 424242;
+	//TEST STR
+	printf(">>>>>>>>>TEST STR \n");
+	printf("Hello %0+#-s\n", buf);
 	//TEST FLAGS - + space # 0
 	printf(">>>>>>>>>TEST FLAGS - + space # 0\n");
 	printf("Hello >>[%d]\n", i);
