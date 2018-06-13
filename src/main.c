@@ -9,6 +9,6 @@ int	main()
 	c = 'a';
 	i = 10;
 	j = 5;
-	ft_printf("Hello %0-d %0i hello %-hhD %% %+#hhc \n", i, j, i, c);
+	ft_printf("Hello %0-d%0i hello %-hhD %% %+#hhc \n", i, j, i, c);
 	return(0);
 }

@@ -78,6 +78,7 @@ int		main()
 	printf("pourcentage %+101-------%bd djdjdj`\n", neg, pos);
 	///LAST TEST 
 	printf("LAST TEST\n");
-	printf("%dd", j);
+	printf("%dd\n", j);
+	printf(">>>%0d%0i\n", i, neg);
 	return (0);
 }

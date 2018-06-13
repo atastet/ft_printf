@@ -51,5 +51,6 @@ int		save_flags(const char *format, int i, t_lst *tmp);
 int		save_type(const char * format, int i, t_lst *tmp);
 t_lst		*create_first();
 void		create_lst(t_lst *tmp);
+int			display(t_lst *flags, va_list args);
 
 #endif
