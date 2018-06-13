@@ -11,7 +11,7 @@ int	main()
 	dol = '$';
 	c = 'A';
 	i = -5556667;
-	j = 5;
-	ft_printf("Hello %0+-#s%0i hello %-hhd %% %+#hhc %-0#hhi%c%%\n",str, i, j, c, i, dol);
+	j = 42;
+	ft_printf("Hello %0+-#s %+i hello %hh+d %% %c [% i] %c %% \n",str, j, j, c, j, dol);
 	return(0);
 }

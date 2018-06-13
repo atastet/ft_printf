@@ -26,9 +26,18 @@ static int		flags_d(t_lst *tmp, va_list args, char *buff, int j)
 	
 	//MUTE
 	i = 0;
-	tmp->type = 4;
 	nb = va_arg(args, int);
 	str = ft_itoa(nb);
+	if (tmp->plus == 1 && nb >= 0)
+	{
+		buff[j] = '+';
+		j++;
+	}
+	if (tmp->space == 1 & nb >= 0)
+	{
+		buff[j] = ' ';
+		j++;
+	}
 	while (str[i])
 	{
 		buff[j] = str[i];
@@ -68,27 +77,21 @@ int				display(t_lst *flags, va_list args, const char *format)
 	tmp = flags;
 	i = 0;
 	j = 0;
-	printf(">>test 1");
 	while (format[i])
 	{
-		printf(">>test 1 and i = %d + j = %d\n", i, j);
 		while (format[i] != '%' && format[i])
 		{
-			printf(">>test 2 and i = %d + j = %d\n", i, j);
 			buff[j] = format[i];
-			printf(">>test 3 and i = %d + j = %d\n", i, j);
 			j++;
 			i++;
 		}
 		if (format[i] == '%')
 		{
-			// NEED TO CREATE A STRUCT TO PASS LESS THAN 5 ARG solution could be a str_len
-			printf(">>test 4 and i = %d + j = %d\n", i, j);
+			// NEED TO CREATE A STRUCT TO PASS LESS THAN 5 ARG solution could be a str_l
 			j = display_var(tmp, args, buff, j);
 			i += tmp->len - 1;
 			tmp = tmp->next;
 		}
-		printf(">>test 5 and i = %d + j = %d\n", i, j);
 		i++;
 	}
 	write(1, buff, j + 1);

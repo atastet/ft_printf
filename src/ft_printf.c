@@ -51,7 +51,7 @@ static void	test_flags(t_lst *flags)
 	tmp = flags;
 	while (tmp->next)
 	{
-		printf("LST %d >> len => %d type = %d, plus %d, hash %d, minus = %d, zero = %d, h =%d,  hh = %d, %% = %d\n",i, tmp->len, tmp->type, tmp->plus, tmp->hash, tmp->minus, tmp->zero, tmp->h, tmp->hh, tmp->pourc);
+		printf("LST %d >> len => %d space %d, plus %d, type = %d, plus %d, hash %d, minus = %d, zero = %d, h =%d,  hh = %d, %% = %d\n",i, tmp->len,tmp->space, tmp->plus, tmp->type, tmp->plus, tmp->hash, tmp->minus, tmp->zero, tmp->h, tmp->hh, tmp->pourc);
 		i++;
 		tmp = tmp->next;
 	}
