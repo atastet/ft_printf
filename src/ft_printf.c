@@ -68,7 +68,7 @@ int				ft_printf(const char *format, ...)
 	flags = parse_flags(format);
 	//TO DELETE JUSTE TO TEST flags
 	test_flags(flags);
-	ret = display(flags, args),
+	ret = display(flags, args, format),
 	va_end(args);
 	printf("%s\n", format);
 	printf("END OF PRINTF");
