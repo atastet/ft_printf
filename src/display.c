@@ -18,12 +18,24 @@ static int		flags_s(t_lst *tmp, va_list args, char *buff, int j)
 	return (j);
 }
 
-static int		flags_i(t_lst *tmp, va_list args, char *buff, int j)
+static int		flags_d(t_lst *tmp, va_list args, char *buff, int j)
 {
-	int i;
-
-	tmp->type = 4;
+	int		i;
+	int		nb;
+	char	*str;
 	
+	//MUTE
+	i = 0;
+	tmp->type = 4;
+	nb = va_arg(args, int);
+	str = ft_itoa(nb);
+	while (str[i])
+	{
+		buff[j] = str[i];
+		i++;
+		j++;
+	}
+	return(j);
 }
 
 static	int		display_var(t_lst *tmp, va_list args, char *buff, int j)
@@ -32,8 +44,12 @@ static	int		display_var(t_lst *tmp, va_list args, char *buff, int j)
 	// ex : va_arg(args, int); DELETE IT
 	if (tmp->type == 1)
 		j = flags_s(tmp, args, buff, j);
-	else if (tmp->type == 4)
+	else if (tmp->type == 6)
 		j = flags_i(tmp, args, buff, j);
+	else if (tmp->type == 4)
+		j = flags_d(tmp, args, buff, j);
+	else if (tmp->type == 13)
+		j = flags_c(tmp, args, buff, j);
 	else if (tmp->type != 0)
 		buff[j] = '$';
 	else if (tmp->pourc == 1)

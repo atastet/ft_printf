@@ -6,9 +6,12 @@ int	main()
 	int j;
 	char c;
 	char str[18] = "[Anthony TASTET]\0";
-	c = 'a';
-	i = 10;
+	char dol;
+
+	dol = '$';
+	c = 'A';
+	i = -5556667;
 	j = 5;
-	ft_printf("Hello %0+-#s%0i hello %-hhD %% %+#hhc %-0#hhx\n",str, i, j, i, c);
+	ft_printf("Hello %0+-#s%0i hello %-hhd %% %+#hhc %-0#hhi%c%%\n",str, i, j, c, i, dol);
 	return(0);
 }

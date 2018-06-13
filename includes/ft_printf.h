@@ -15,6 +15,7 @@
 
 # define BUFF_SIZE 4096
 
+#include "../libft/libft.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -52,5 +53,7 @@ int		save_type(const char * format, int i, t_lst *tmp);
 t_lst		*create_first();
 void		create_lst(t_lst *tmp);
 int			display(t_lst *flags, va_list args, const char *format);
+int			flags_i(t_lst *tmp, va_list args, char *buff, int j);
+int			flags_c(t_lst *tmp, va_list args, char *buff, int j);
 
 #endif
