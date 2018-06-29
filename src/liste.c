@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 18:25:11 by atastet           #+#    #+#             */
-/*   Updated: 2018/06/04 19:35:32 by atastet          ###   ########.fr       */
+/*   Updated: 2018/06/29 16:43:09 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	create_lst(t_lst *tmp)
 {
 	t_lst *new;
-	
-	if((new = (t_lst *)malloc(sizeof(t_lst))) == NULL)
+
+	if ((new = (t_lst *)malloc(sizeof(t_lst))) == NULL)
 		return ;
 	new->next = NULL;
 	new->type = 0;
@@ -38,11 +38,11 @@ void	create_lst(t_lst *tmp)
 	tmp->next = new;
 }
 
-t_lst	*create_first()
+t_lst	*create_first(void)
 {
 	t_lst *new;
-	
-	if((new = (t_lst *)malloc(sizeof(t_lst))) == NULL)
+
+	if ((new = (t_lst *)malloc(sizeof(t_lst))) == NULL)
 		return (NULL);
 	new->next = NULL;
 	new->type = 0;

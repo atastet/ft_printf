@@ -6,13 +6,13 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 14:49:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/06/04 19:35:06 by atastet          ###   ########.fr       */
+/*   Updated: 2018/06/29 16:44:45 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static t_lst			*parse_flags(const char *format)
+static t_lst		*parse_flags(const char *format)
 {
 	int		i;
 	t_lst	*lst;
@@ -36,18 +36,18 @@ static t_lst			*parse_flags(const char *format)
 		if (format[i] != '%')
 			i++;
 	}
-		//FREE TMP J'ai limpression de creer un maillon de trop
+	//FREE TMP J'ai limpression de creer un maillon de trop
 	free(tmp);
 	return (lst);
 }
 
 //JUST TESTING FLAGS, TO DELETE
-static void	test_flags(t_lst *flags)
+static void			test_flags(t_lst *flags)
 {
-	int i;
-	i = 0;
+	int		i;
 	t_lst	*tmp;
-	
+
+	i = 0;
 	tmp = flags;
 	while (tmp->next)
 	{
@@ -57,7 +57,7 @@ static void	test_flags(t_lst *flags)
 	}
 }
 
-int				ft_printf(const char *format, ...)
+int					ft_printf(const char *format, ...)
 {
 	va_list args;
 	t_lst		*flags;
@@ -69,7 +69,7 @@ int				ft_printf(const char *format, ...)
 	//TO DELETE JUSTE TO TEST flags
 	test_flags(flags);
 	ret = display(flags, args, format),
-	va_end(args);
+		va_end(args);
 	printf("%s\n", format);
 	printf("END OF PRINTF");
 	///LATER IT SHOULD RETURN THE NUMBER OF C PRINT

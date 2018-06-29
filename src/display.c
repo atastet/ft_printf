@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/29 16:30:44 by atastet           #+#    #+#             */
+/*   Updated: 2018/06/29 16:48:18 by atastet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 static int		flags_s(t_lst *tmp, va_list args, char *buff, int j)
@@ -5,7 +17,7 @@ static int		flags_s(t_lst *tmp, va_list args, char *buff, int j)
 	char	*str;
 	int		i;
 
-	//DELETE IT
+//DELETE IT
 	tmp->type = 1;
 	i = 0;
 	str = va_arg(args, char *);
@@ -23,8 +35,8 @@ static int		flags_d(t_lst *tmp, va_list args, char *buff, int j)
 	int		i;
 	int		nb;
 	char	*str;
-	
-	//MUTE
+
+//MUTE
 	i = 0;
 	nb = va_arg(args, int);
 	str = ft_itoa(nb);
@@ -44,13 +56,12 @@ static int		flags_d(t_lst *tmp, va_list args, char *buff, int j)
 		i++;
 		j++;
 	}
-	return(j);
+	return (j);
 }
 
 static	int		display_var(t_lst *tmp, va_list args, char *buff, int j)
 {
-	
-	// ex : va_arg(args, int); DELETE IT
+// ex : va_arg(args, int); DELETE IT
 	if (tmp->type == 1)
 		j = flags_s(tmp, args, buff, j);
 	else if (tmp->type == 6)
@@ -73,7 +84,7 @@ int				display(t_lst *flags, va_list args, const char *format)
 	int		i;
 	int		j;
 	t_lst	*tmp;
-	
+
 	tmp = flags;
 	i = 0;
 	j = 0;
@@ -97,5 +108,5 @@ int				display(t_lst *flags, va_list args, const char *format)
 	write(1, buff, j + 1);
 	//free(tmp);
 	//NEED TO WORK ON SOLUTION WHEN YOU ARE REACHING THE END OF BUFF
-	return(j);
+	return (j);
 }
