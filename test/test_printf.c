@@ -6,11 +6,12 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:35:21 by atastet           #+#    #+#             */
-/*   Updated: 2018/06/04 19:13:44 by atastet          ###   ########.fr       */
+/*   Updated: 2018/06/29 16:54:44 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <wchar.h> 
 
 int		main()
 {
@@ -83,5 +84,13 @@ int		main()
 	printf("LAST TEST\n");
 	printf("%dd\n", j);
 	printf(">>>%0d%0i\n", i, neg);
+	printf("\n\n>>>>>TEST INTRA FORUM\n");
+	printf("4567 |%-10]5d| plip\n", 12);
+	printf("4567 |%10]5d| plip\n", 12);
+	printf("|%10.5d|\n", -12);
+	printf("|%10d|\n", -12);
+	printf("|%010d|\n", -12); 
+	printf("|%-10.5d|\n", -12);
+	printf("|%-010.5d|\n", -12);
 	return (0);
 }
